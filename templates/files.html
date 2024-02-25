@@ -1,0 +1,63 @@
+{{define "files"}}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>ngfshare - Listing</title>
+		<style>
+{{template "style"}}
+</style>
+	</head>
+	<body>
+	<div id="header">
+        <div id="txtheader"><h1>ngfshare</h1></div>
+        <div id="upload"><form enctype="multipart/form-data" id="fupload" method="POST" action="/api/upload">
+			<input type="file" name="file">
+			<input type="submit" value="Upload">
+        </form></div>
+        <div id="logout"><form id="flogout" method="POST" action="/logout">
+			<input type="submit" value="Logout">
+        </form></div>
+	</div>
+	<content>
+		<h3>Files</h3>
+		<table>
+		<tbody>
+		<thead>
+			<th>Filename</th>
+			<th>Size</th>
+			<th>Uploaded</th>
+			<th>Type</th>
+			<th>Action</th>
+		</thead>
+		<tbody>
+        {{range .}}
+			<tr>
+				<td>
+                    <a target="_blank" href="/-{{.Id}}/{{.Filename}}"><span title="{{.Sha1Sum}}">{{.Filename}}</span></a>
+				</td>
+				<td>
+                    <span>{{formatFileSize .Size}}</span>
+				</td>
+				<td>
+                    <span>{{formatDate .UploadTime}}</span>
+				</td>
+				<td>
+                    <span>{{.ContentType}}</span>
+				</td>
+				<td>
+                    <form class="deleteform" action="/api/delete/{{.Id}}" method="POST" target="_blank">
+                        <input type="submit" value="Delete" />
+                    </form>
+				</td>
+			</tr>
+        {{end}}
+		</tbody>
+		</table>
+        {{if not .}}
+            <span>No uploads yet</span>
+        {{end}}
+	</div>
+	</body>
+</html>
+{{end}}

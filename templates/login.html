@@ -1,0 +1,23 @@
+{{define "login"}}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>ngfshare - Log in</title>
+		<style>
+{{template "style"}}
+</style>
+	</head>
+	<body>
+	<div id='divLogin'>
+	<h1>ngfshare</h1>
+		<form id="loginForm" action="/login" method="POST">
+			<!-- <label for="auth">Auth key</label>-->
+			<input placeholder="Auth key" required type="password" name="auth">
+			<br>
+			<input type="submit" value="Login">
+		</form>
+	</div>
+	</body>
+</html>
+{{end}}

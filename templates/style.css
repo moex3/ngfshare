@@ -1,0 +1,133 @@
+{{define "style"}}
+
+
+body {
+  background-color: #414141;
+  color: #D4D3D3;
+  font-size: 1.4em;
+  font-family: sans-serif;
+}
+
+#divLogin > h1 {
+  width: initial;
+  text-align: center;
+}
+
+#divLogin {
+  margin: auto;
+  width: 400px;
+  margin-top: 80px;
+  
+}
+
+
+th {
+  text-align: left;
+}
+
+a {
+  color: #F1EBEB;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+th {
+  border-bottom: 1px solid #D4D3D3;
+}
+
+td {
+  border-bottom: 1px dashed #D4D3D3;
+}
+
+#loginForm {
+  display: block;
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+#loginForm > input {
+  padding: 2px 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+content {
+  margin: auto 0px;
+  
+}
+
+
+#header {
+  width: 100%;
+  display: flex;
+    justify-content: space-between;
+}
+
+#flogout {
+  
+}
+
+#flogout {
+  float: right;
+  
+}
+
+#txtheader {
+  width: fit-content;
+  display: inline;
+}
+
+#flogout {
+  float: right;
+  margin: 20px;
+}
+
+#flogout input {
+  width: 100px;
+  background-color: #F1EBEB;  
+  border: none;
+  color: #414141;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+content > table {
+  width: 80%;
+}
+
+.deleteform input {
+  background-color: rgba(0,0,0,0);  
+  border: none;
+  color: #F1EBEB;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#header form input {
+  width: 100px;
+  background-color: #F1EBEB;  
+  border: none;
+  color: #414141;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+#fupload {
+  width: 500px;
+  align-self: center;
+  float: center;
+  margin: 20px;
+}
+
+{{end}}
