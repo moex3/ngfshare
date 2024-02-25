@@ -12,7 +12,7 @@ Example config.json
     "DBpath": "/var/lib/ngfshare/database.db",
     "StoreDir": "/var/lib/ngfshare/store",
     "HTMLTemplateDir": "/var/lib/ngfshare/templates",
-    "UrlPrefix": "http://share.yourdomain.xyz",
+    "UrlPrefix": "https://share.yourdomain.xyz",
     "IdLen": 5,
     "AuthKeyLen": 30
 }
@@ -52,9 +52,9 @@ This returns a json dict
 {
   "id": "A5HjC",
   "filename": "img.png",
-  "url": "http://share.yourdomain.xyz/-A5HjC/img.png",
-  "url_short": "http://share.yourdomain.xyz/-A5HjC",
-  "delete_url": "http://share.yourdomain.xyz/api/delete/A5HjC"
+  "url": "https://share.yourdomain.xyz/-A5HjC/img.png",
+  "url_short": "https://share.yourdomain.xyz/-A5HjC",
+  "delete_url": "https://share.yourdomain.xyz/api/delete/A5HjC"
 }
 ```
 
