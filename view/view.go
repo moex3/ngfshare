@@ -6,6 +6,8 @@ import (
     "io"
     "html/template"
     "time"
+
+    "git.fuwafuwa.moe/x3/ngfshare/config"
 )
 
 var tmpl *template.Template
@@ -32,7 +34,7 @@ func addFuncs(t *template.Template) *template.Template {
 }
 
 func LoadTemplates() error {
-    t, err := addFuncs(template.New("")).ParseGlob("./templates/*")
+    t, err := addFuncs(template.New("")).ParseGlob(fmt.Sprintf("%s/*", config.Conf.HTMLTemplateDir))
     if err != nil {
         log.Println("LoadTemplates:", err)
         return err

@@ -11,6 +11,7 @@ type Config struct {
     Address string
     DBpath string
     StoreDir string
+    HTMLTemplateDir string
     UrlPrefix string
     IdLen int
     AuthKeyLen int
