@@ -19,6 +19,15 @@ func Download(w http.ResponseWriter, r *http.Request) {
         http.NotFound(w, r)
         return
     }
+
+    ifModifH := r.Header.Get("If-Modified-Since")
+    if ifModifH != "" {
+        // Is (probably) not modified, send back 304
+        log.Printf("Download (%s): got If-Modified-Since, replying 304\n", id)
+        w.WriteHeader(http.StatusNotModified)
+        return
+    }
+
     d1 := file.Sha1Sum[0:2]
     d2 := file.Sha1Sum[2:4]
 
