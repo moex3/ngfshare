@@ -55,4 +55,5 @@ func main() {
         fmt.Printf("Failed to start listen: ", err)
         return
     }
+    fmt.Println("Returning from main...")
 }

@@ -60,6 +60,7 @@ func Open(path string) (*DB, error) {
 }
 
 func (db *DB) Close() error {
+    log.Println("Closing database...")
     err := db.ctx.Close()
     Db = nil
     return err
