@@ -113,7 +113,10 @@ func Upload(w http.ResponseWriter, r *http.Request) {
     file.Read(b)
     fType := http.DetectContentType(b)
     if fType == "application/octet-stream" {
-        fType = fheader.Header.Get("Content-Type")
+        hType := fheader.Header.Get("Content-Type")
+        if hType != "" {
+            fType = hType
+        }
     }
 
     resId, tx, err := db.Db.InsertFile(fheader.Filename, fheader.Size, fType, sum, auth)
