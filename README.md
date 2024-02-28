@@ -38,8 +38,8 @@ server {
 
 (Optional) Caching based only on file id can be enabled with this example configuration
 ```cfg
-# Will match '/-{id}' '/-{id}/' '/-{id}/name' but not '/-{id}/name/other'
-location ~ ^/-([a-zA-Z0-9]+)(?:/?$|/[^\/]+$)
+# Will match '/-{id}' '/-{id}/' '/-{id}/name' but not '/-{id}/name/' or '/-{id}/name/other'
+location ~ ^/-([a-zA-Z0-9]+)(?:/?$|/[^/]+$)
     # Other caching options are omitted here...
     proxy_cache_revalidate on;
     proxy_cache_key "$host$1";
